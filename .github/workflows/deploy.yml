@@ -3,7 +3,7 @@ on:
   push
 
 jobs:
-  my-
+  my-job:
     runs-on: ubuntu-latest
     env:
         # REPLACE THIS
