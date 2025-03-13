@@ -72,7 +72,13 @@ def set_scenario():
     )
     response.raise_for_status()
 
+    app.logger.info("Response from endpoint: " + response.text)
+
+    import logging
+    logging.basicConfig(level=logging.INFO)
+
     return redirect('/')
+
 
 if __name__ == "__main__":
     app.run()
