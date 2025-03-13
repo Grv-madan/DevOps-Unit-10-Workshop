@@ -8,6 +8,9 @@ from scheduled_jobs import initialise_scheduled_jobs
 from products import create_product_download
 import requests
 
+import logging
+logging.basicConfig(level=logging.INFO)
+
 app = Flask(__name__)
 app.config.from_object(Config)
 
@@ -72,11 +75,7 @@ def set_scenario():
     )
     response.raise_for_status()
 
-    app.logger.info("Response from endpoint: " + response.text)
-
-    import logging
-    logging.basicConfig(level=logging.INFO)
-
+  
     return redirect('/')
 
 
